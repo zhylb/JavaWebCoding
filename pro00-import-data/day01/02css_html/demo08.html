@@ -1,0 +1,144 @@
+<!--<!DOCTYPE 01html>-->
+<!-- 使用html4 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: slategrey;
+        }
+        div{
+            position: relative;
+        }
+        #div_top{
+            background-color: blueviolet;
+            height: 20%;
+        }
+        #div_left{
+            background-color: aqua;
+            height: 80%;
+            width: 20%;
+
+            float: left;
+        }
+        #div_main{
+            background-color: bisque;
+            height: 70%;
+            width: 80%;
+            float: left;
+
+
+        }
+        #div_bottom{
+            background-color: cadetblue;
+            height: 10%;
+            width: 80%;
+            float: left;
+        }
+        #div_container{
+            width: 80%;
+            height: 100%;
+            border: 1px solid blue;
+            margin-left: 10%;
+            float: left;
+
+        }
+
+        .delImg{
+            width: 24px;
+            height: 24px;
+        }
+
+        #tbl_fruit tr,#tbl_fruit th,#tbl_fruit td{
+            border: 0px solid orangered;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 16px;
+            font-family: "华文行楷";
+            color: midnightblue;
+
+        }
+
+        #tbl_fruit{
+            width:80%;
+            line-height: 28px;
+            float: left;
+            margin-left: 10%;
+            margin-top: 10%;
+
+
+        }
+
+        #div_fruit_list{
+            width: 100%;
+            border: 0px solid red;
+            float: left;
+        }
+
+        #div_container1{
+            height: 80%;
+            width: 80%;
+            border: 1px solid blue;
+            margin-left: 10%;
+            float: left;
+            background-color: lavenderblush;
+            border-radius: 25px; /*圆角效果*/
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="div_container">
+    <div id="div_top">div_top</div>
+    <div id="div_left">div_left</div>
+    <div id="div_main">
+        <div id="div_container1">
+            <div id="div_fruit_list">
+
+                <table id="tbl_fruit">
+                    <tr>
+                        <th>名称</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr align="center">
+                        <td>苹果</td>
+                        <td>5</td>
+                        <td>20</td>
+                        <td>100</td>
+                        <td><img src="../imgs/del.jpg"class="delImg"/></td>
+                    </tr>
+                    <tr align="center">
+                        <td>菠萝</td>
+                        <td>5</td>
+                        <td>20</td>
+                        <td>100</td>
+                        <td><img src="../imgs/del.jpg"class="delImg"/></td>
+                    </tr>
+                    <tr align="center">
+                        <td>西瓜</td>
+                        <td>1</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td><img src="../imgs/del.jpg"class="delImg"/></td>
+                    </tr>
+                    <tr>
+                        <td>总计</td>
+                        <td colspan="4">999</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div id="div_bottom">div_bottom</div>
+</div>
+
+</body>
+</html>

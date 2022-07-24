@@ -1,0 +1,57 @@
+package com.lihd.myssm.filters;
+
+import com.lihd.myssm.trans.TransactionManager;
+
+import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
+import java.sql.SQLException;
+
+/**
+ * @author ：葬花吟留别1851053336@qq.com
+ * @description：TODO
+ * @date ：2022/4/5 23:28
+ */
+@WebFilter("*.do")
+public class OpenSessionInViewFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+
+        try {
+            TransactionManager.startTransaction();
+            System.out.println("开启事务");
+            filterChain.doFilter(servletRequest, servletResponse);
+            TransactionManager.commit();
+            System.out.println("提交事务");
+        } catch (Exception e) {
+            try {
+                TransactionManager.rollback();
+                System.out.println("回滚事务");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            e.printStackTrace();
+            System.out.println(servletResponse.getClass());
+
+
+        }finally {
+            try {
+                TransactionManager.endTransaction();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+}

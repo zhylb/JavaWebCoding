@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 内部样式表 -->
+    <style type="text/css">
+        /*这里被style标签表示的范围是css环境 可以写css代码*/
+
+        /*标签样式表*/
+        p{
+            color:red;
+        }
+
+        /*类样式*/
+        .f20{
+            font-size: 20px;
+        }
+
+        /*ID样式*/
+        #bg{
+            background-color: pink;
+            font-size: 20px;
+            font-weight: bolder;
+            font-style: italic;
+            font-family: "华文彩云";
+        }
+        /* 组合样式 */
+        div p{
+            color:blue;
+        }
+
+        div .f32{
+            font-size: 32px;
+            font-family: "黑体;
+        }
+
+    </style>
+</head>
+<body>
+<!--  不建议   <p><font color="red">这是段落一</font></p>-->
+    <p>这是段落一</p>
+    <p>这是段落二</p>
+    <p class="f20">这是段落三</p>
+    <p>这是段落四</p>
+    <p id="bg">这是段落五</p> <!-- id属性在整个HTMl文件中 强烈建议保持唯一 -->
+
+    <div>
+        <p>
+            <!-- 嵌入式样式表 写在一个样式的内部 非常不建议 -->
+            <span style="background-color: aqua">HELLO</span>
+        </p>
+        <span class="f32">WORLD</span>
+        <p class="f32">吕奉先</p>
+    </div>
+</body>
+</html>
+
+<!--
+1 为什么需要Css
+2 css的基本分类 ： 标签样式表 类样式表 ID样式表
+3 css从位置上的分类：嵌入式样式表 ，内部样式表，外部样式表
+-->

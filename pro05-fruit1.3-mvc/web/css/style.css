@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: slategrey;
+}
+
+a{
+    text-decoration: none;
+}
+div{
+    position: relative;
+    float: left;
+}
+
+#div_container{
+    width: 80%;
+    height: 100%;
+    border: 1px solid blue;
+    margin-left: 10%;
+    float: left;
+    background-color: lavenderblush;
+    border-radius: 25px; /*圆角效果*/
+
+}
+#div_fruit_list{
+    width: 100%;
+    border: 0px solid red;
+}
+
+#add_fruit_div{
+    width: 100%;
+    border: 1px solid red;
+}
+
+
+#tbl_fruit{
+    width:80%;
+    line-height: 28px;
+    float: left;
+    margin-left: 10%;
+    /*margin-top: 10%;*/
+
+
+}
+#add_fruit_table{
+    width:80%;
+    border: 0px solid yellow;
+    line-height: 10px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+
+#add_fruit_table tr ,#add_fruit_table td{
+    border: 0px solid orangered;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+    font-family: "华文行楷";
+    color: midnightblue;
+}
+
+
+
+#tbl_fruit, tbl_fruit tr,#tbl_fruit th,#tbl_fruit td{
+    border: 0px solid orangered;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+    font-family: "华文行楷";
+    color: midnightblue;
+
+}
+
+.w20{
+    width: 20%;
+}
+
+.delImg{
+    width: 25px;
+    height: 25px;
+}
+
+.btn{
+    border:1px solid lightgray;
+    width: 100px;
+    height: 25px;
+}
+
+.center{
+    text-align: center;
+}
+
+.f30{
+    font-size: 30px;
+}

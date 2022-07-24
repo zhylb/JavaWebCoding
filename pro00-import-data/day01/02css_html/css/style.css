@@ -1,0 +1,27 @@
+/*标签样式表*/
+p{
+    color:red;
+}
+
+/*类样式*/
+.f20{
+    font-size: 20px;
+}
+
+/*ID样式*/
+#bg{
+    background-color: pink;
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: "华文彩云";
+}
+/* 组合样式 */
+div p{
+    color:blue;
+}
+
+div .f32{
+    font-size: 32px;
+    font-family: "黑体;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        // 全局匹配
+        let regExp = new RegExp("123");
+        let regExp2 = /78/;
+
+        let a = '12345678';
+        let b = 'asd1f23jl78asdf';
+
+        let b1 = regExp.test(a);
+        let b2 = regExp.test(b);
+        let b3 = regExp2.test(a);
+        let b4 = regExp2.test(b);
+
+        console.log(b1);
+        console.log(b2);//false
+        console.log(b3);
+        console.log(b4);
+
+
+    </script>
+</head>
+<body>
+    <p>hello world</p>
+</body>
+</html>

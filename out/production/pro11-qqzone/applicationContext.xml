@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans [
+        <!ELEMENT beans (bean*)>
+        <!ELEMENT bean (property*)>
+        <!ELEMENT property (#PCDATA)>
+
+        <!ATTLIST bean id ID #REQUIRED>
+        <!ATTLIST bean class CDATA #IMPLIED>
+        <!ATTLIST property name CDATA #IMPLIED>
+        <!ATTLIST property ref IDREF #IMPLIED>
+        ]>
+<beans>
+    <!-- dao 层 -->
+    <bean id="userBasicDAO" class="com.lihd.qqzone.dao.impl.UserBasicDAOImpl"/>
+    <bean id="topicDAO" class="com.lihd.qqzone.dao.impl.TopicDAOImpl"/>
+    <bean id="replyDAO" class="com.lihd.qqzone.dao.impl.ReplyDAOImpl"/>
+    <bean id="hostReplyDAO" class="com.lihd.qqzone.dao.impl.HostReplyDAOImpl"/>
+
+    <!-- service 层-->
+    <bean id="userBasicService" class="com.lihd.qqzone.service.impl.UserBasicServiceImpl">
+        <property name="userBasicDAO" ref="userBasicDAO"/>
+        <property name="topicDAO" ref="topicDAO"/>
+    </bean>
+    <bean id="topicService" class="com.lihd.qqzone.service.impl.TopicServiceImpl">
+        <property name="topicDAO" ref="topicDAO"/>
+        <property name="replyService" ref="replyService"/>
+        <property name="userBasicDAO" ref="userBasicDAO"/>
+    </bean>
+    <bean id="replyService" class="com.lihd.qqzone.service.impl.ReplyServiceImpl">
+        <property name="userBasicDAO" ref="userBasicDAO"/>
+        <property name="replyDAO" ref="replyDAO"/>
+        <property name="hostReplyDAO" ref="hostReplyDAO"/>
+
+    </bean>
+    <bean id="hostReplyService" class="com.lihd.qqzone.service.impl.HostReplyServiceImpl">
+        <property name="hostReplyDAO" ref="hostReplyDAO"/>
+    </bean>
+
+
+
+    <bean id="user" class="com.lihd.qqzone.controller.UserBasicController">
+        <property name="userBasicService" ref="userBasicService"/>
+    </bean>
+
+    <bean id="topic" class="com.lihd.qqzone.controller.TopicController">
+        <property name="topicService" ref="topicService"/>
+    </bean>
+
+    <bean id="reply" class="com.lihd.qqzone.controller.ReplyController">
+        <property name="replyService" ref="replyService"/>
+    </bean>
+
+    <bean id="render" class="com.lihd.myssm.myspringmvc.RenderViewByThymeleaf"/>
+</beans>

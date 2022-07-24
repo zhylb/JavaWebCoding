@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Beans>
+
+    <bean id="fruitDAO" class="com.lihd.fruit.dao.impl.FruitDAOImpl"/>
+    <bean id="fruitService" class="com.lihd.fruit.service.impl.FruitServiceImpl">
+        <property name="fruitDAO" ref="fruitDAO"/>
+    </bean>
+
+
+    <bean id="fruit" class="com.lihd.fruit.controller.FruitController">
+        <property name="fruitService" ref="fruitService"/>
+    </bean>
+
+    <bean id="view" class="com.lihd.fruit.controller.ViewController"/>
+</Beans>

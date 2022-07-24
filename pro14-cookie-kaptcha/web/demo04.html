@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        function clickMe(){
+            let a = '{"uname":"lina","pwd":"love"}';
+
+            //str -> json
+            let parse = JSON.parse(a);
+            document.write(typeof parse + "<br/>");
+            document.write(parse.uname +"__" + parse.pwd+ "<br/>")
+
+            //json -> str
+            let stringify = JSON.stringify(parse);
+            document.write(typeof stringify+ "<br/>")
+            document.write(stringify+ "<br/>")
+
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="clickMe()">
+</body>
+</html>

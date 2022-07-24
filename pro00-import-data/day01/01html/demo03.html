@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签的使用</title>
+</head>
+<body>
+    <form action="demo01.html" method="get">
+        昵称：<input type="text" name="nickName"> <br/>
+        密码：<input type="password" name="pwd"> <br/>
+        性别：<input type="radio" name="gender" value="male" checked="checked"> 男
+                <input type="radio" name="gender" value="female"> 女<br/>
+        爱好：<input type="checkbox" name="hobby" value="java" checked> Java
+        <input type="checkbox" name="hobby" value="python" checked="checked"> Python
+        <input type="checkbox" name="hobby" value="cpp"> CPP <br/>
+        星座：<select name="star">
+                <option value="1">双子座</option>
+                <option value="2">白羊座</option>
+                <option value="3" selected>金牛座</option>
+                <option value="4">天蝎座</option>
+                <option value="5">天秤座</option>
+                <option value="6">射手座</option>
+            </select><br/>
+        备注：<textarea name="remark" rows="4" cols="25">备注：</textarea><br/>
+        <input type="submit" value="register">
+        <input type="reset" value="reset">
+        <input type="button" value="我很普通">
+    </form>
+</body>
+</html>
+
+<!--
+18) 表单 from
+19) input type = "text" 表示文本框 其中name属性必须要指定 否则这个文本框数据不会发送给服务器
+    input type = "password" 密码框
+    input type = "radio" 表示单选按钮 需要指定name属性值保持一致才能有互斥的效果，可以通过属性checked设置默认选中的状态
+    input type = "checkbox" 表示复选框 name属性值建议保持一致，这样服务器获取属性值是一个数组，方便处理 以通过属性checked设置默认选中的状态
+    select 表示下拉列表 每一个选项是一个option 其中value属性是发送给服务器的值，selected表示默认选中的项
+    textarea 表示多行文本框 或者文本域 他的value值就是开始和结束标签之间的内容
+    input type = "submit" 表示提交按钮
+    input type = "reset" 表示重置按钮
+    input type = "button" 表示普通按钮
+
+    经过实验证明 name字段是必须的
+http://localhost:63342/day01/demo04.html?nickName=111&pwd=222&gender=female&hobby=java&hobby=python&hobby=cpp&star=%E5%8F%8C%E5%AD%90%E5%BA%A7&remark=%E5%A4%87%E6%B3%A8%EF%BC%9A34f3g5
+
+-->

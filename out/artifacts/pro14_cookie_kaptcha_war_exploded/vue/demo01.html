@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="js/vue.js"></script>
+    <script language="JavaScript">
+        window.onload = function (){
+
+            //Vue对象的参数是一个json,json用:,不要使用 =
+            let vue1 = new Vue({
+                //el代表要绑定的元素
+                el :'#vueTest',
+                //data表示数据
+                data : {
+                    'p1':'myFirstVue',
+                    'p2':'long time no see'
+                }
+            })
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="vueTest">
+        <p>{{p1}}</p>
+        <p>{{p2}}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="JavaScript" src="axios/js/vue.js"></script>
+    <script language="JavaScript" src="axios/js/axios.min.js"></script>
+    <script language="JavaScript">
+        // window.onload=function(){
+        //     var vue = new Vue({
+        //         "el":"#axios",
+        //         data:{
+        //             uname:"lina",
+        //             pwd:"ok"
+        //         },
+        //         methods:{
+        //             axios01Click:function(){
+        //                 axios({
+        //                     method:"POST",
+        //                     url:"../axios01",
+        //                     params:{
+        //                         uname:vue.uname,
+        //                         pwd:vue.pwd
+        //                     }
+        //                 })
+        //                     .then(function (value) {
+        //                         console.log(value);
+        //                     })
+        //                     .catch(function (reason) {
+        //                         console.log(reason);
+        //                     });
+        //             }
+        //         }
+        //     });
+        // }
+
+        window.onload = function (){
+
+            let vue = new Vue({
+                el:"#axios",
+                data:{
+                    "uname" : "alan",
+                    "pwd":"123456"
+                },
+                methods:{
+                    axios01Click:function () {
+                        axios({
+                            method: "POST",
+                            url: "axios01",
+                            params: {
+                                uname: vue.uname,
+                                pwd: vue.pwd
+                            }
+                        }).
+                        then(function (value) {
+                            console.log(value)
+                        }).
+                        catch(function (reason) {
+                            console.log(reason)
+                        })
+                    }
+                }
+
+
+
+
+            })
+
+
+        }
+    </script>
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="axios">
+        <input type="text" name="username"  v-model="uname" >
+        <input type="text" name="password"  v-model="pwd" >
+        <input type="button" value="发送异步请求" @click="axios01Click">
+    </div>
+
+</body>
+</html>

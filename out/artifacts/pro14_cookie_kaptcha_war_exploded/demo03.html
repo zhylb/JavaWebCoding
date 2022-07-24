@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="JavaScript" src="axios/js/vue.js"></script>
+    <script language="JavaScript" src="axios/js/axios.min.js"></script>
+    <script language="JavaScript">
+        window.onload = function (){
+            let vue = new Vue({
+                el:"#axios",
+                data:{
+                    "uname" : "若敢来犯",
+                    "pwd":"必叫你大败而归"
+                },
+                methods:{
+                    axios03Click:function () {
+                        axios({
+                            method: "POST",
+                            url: "axios03",
+                            data: {//这里改成data
+                                uname: vue.uname,
+                                pwd: vue.pwd
+                            }
+                        }).
+                        then(function (value) {
+                            console.log(value)
+                            let getData = value.data;
+                            vue.uname = getData.uname;
+                            vue.pwd = getData.pwd;
+                        }).
+                        catch(function (reason) {
+                            console.log(reason)
+                        })
+                    }
+                }
+            })
+
+
+        }
+    </script>
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="axios">
+        <input type="text" name="username"  v-model="uname" >
+        <input type="text" name="password"  v-model="pwd" >
+        <input type="button" value="发送异步请求" @click="axios03Click">
+    </div>
+
+</body>
+</html>

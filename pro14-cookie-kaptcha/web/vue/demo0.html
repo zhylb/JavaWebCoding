@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-model="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="js/vue.js"></script>
+    <script language="JavaScript">
+        window.onload = function (){
+
+            //Vue对象的参数是一个json,json用:,不要使用 =
+            let vue1 = new Vue({
+                //el代表要绑定的元素
+                el :'#vueTest',
+                //data表示数据
+                data : {
+                    'p1':'myFirstVue',
+
+                }
+            })
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="vueTest">
+        <p>{{p1}}</p>
+        <input type="text"  v-bind:value="p1" /><br/>
+        <input type="text"  v-model:value="p1" /><br/>
+    </div>
+</body>
+</html>
